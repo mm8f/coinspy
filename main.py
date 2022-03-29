@@ -61,7 +61,7 @@ def masg(call):
 		file='done.txt'
 		for Whisper in open(file,'r').read().splitlines():
 			id=str(Whisper.split('\n')[0])
-			whisper = requests.get(f'https://nkkkonn.000webhostapp.com/coins.php?oid={id}&submit=submit').text
+			whisper = requests.get(f'http://192.168.0.100:8080/coin.php?oid={id}&submit=submit').text
 			if 'coins":"' in whisper:
 				coin = Whisper.split('"')[0]
 				gg=str(coin)
