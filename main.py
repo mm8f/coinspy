@@ -68,8 +68,6 @@ def masg(call):
 				ok+=1
 				sk+=1
 				bot.send_message(call.message.chat.id,f"‹ ✅ {id} Coins ==> {coin} =====> • @t_4gi")
-			if int(coin) > 400 and int(coins) < 4000:
-				bot.send_message(call.message.chat.id,f"‹ ✅ {id} Coins ==> {coin} =====> • @t_4gi")
 			else:
 				cp+=1
 				sk+=1
