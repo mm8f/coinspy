@@ -58,10 +58,9 @@ def masg(call):
 		ok=0
 		cp=0
 		sk=0
-		while True:
-			bs= str(''.join(random.choice(xm)for i in range(10)))
-			bl= str(''.join(random.choice(xl)for i in range(1)))
-			id= str(bl)+str(bs)
+		file='done.txt'
+		for Whisper in open(file,'r').read().splitlines():
+			id=str(Whisper.split('\n')[0])
 			whisper = requests.get(f'https://cin.oussamavip.repl.co/?oid={id}&submit=submit').text
 			if 'coins":"' in whisper:
 				coin = Whisper.split('"')[0]
