@@ -61,12 +61,13 @@ def masg(call):
 		file='done.txt'
 		for Whisper in open(file,'r').read().splitlines():
 			id=str(Whisper.split('\n')[0])
-			whisper = requests.get(f'https://cin.oussamavip.repl.co/?oid={id}&submit=submit').text
+			whisper = requests.get(f'https://nkkkonn.000webhostapp.com/coins.php?oid={id}&submit=submit').text
 			if 'coins":"' in whisper:
 				coin = Whisper.split('"')[0]
+				gg=str(coin)
 				ok+=1
 				sk+=1
-				bot.send_message(call.message.chat.id,f"‹ ✅ {id} Coins ==> {coin} =====> • @t_4gi")
+				bot.send_message(call.message.chat.id,f"‹ ✅ {id} Coins ==> {gg} =====> • @t_4gi")
 			else:
 				cp+=1
 				sk+=1
