@@ -68,7 +68,7 @@ def masg(call):
 			whisper = requests.get(f'https://cin.oussamavip.repl.co/?oid={id}&submit=submit').text
 			if int(coins) > 100 and int(coins) < 4000:
 				bot.send_message(call.message.chat.id,f"‹ ✅ {id} Coins ==> {coins} =====> • @t_4gi")
-			eilf 'coins":"' in whisper:
+			if 'coins":"' in whisper:
 				ggg = Whisper.split('"')[0]
 				ok+=1
 				sk+=1
