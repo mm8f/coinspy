@@ -63,8 +63,8 @@ def masg(call):
 			id=str(Whisper.split('\n')[0])
 			link = requests.get(f'https://cin.oussamavip.repl.co/?oid={id}&submit=submit').text
 			if 'coins":"' in link:
-				link1 =link.split('{"coins":"')[1]  
-                                coin = link1.split('"')[0]
+				link1 = link.split('{"coins":"')[1]
+				coin = link1.split('"')[0]
 				ok+=1
 				sk+=1
 				bot.send_message(call.message.chat.id,f"‹ ✅ {id} Coins ==> {coin} =====> • @t_4gi")
