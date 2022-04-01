@@ -80,18 +80,14 @@ def masg(call):
        "Accept-Encoding": "gzip",
        "Accept-Language": "ar-EG,ar;q=0.9,en-US;q=0.8,en;q=0.7"}
 			response = requests.get(url,headers=headers)
-			#----> printed (response.text)
 			if ('{"coins":null}}')in str(response.text):
 			cp+=1
 			elif ('coins') in str(response.text)and not ('{"coins":null}}')in str(response.text):
 				coins = str(response.json()['return']['coins'])
 				coins = int(coins)
-				orders = (coins/4)
-				orders = str(orders)
-				ordere = orders.split('.')[0]
 				ok+=1
 				sk+=1
-				bot.send_message(call.message.chat.id,f"‹ ✅ {id} Coins ==> {coins} =====> • @t_4gi")
+				bot.send_message(call.message.chat.id,f"‹ ✅ {id} Coins ==> "int(coins)" =====> • @t_4gi")
 			else:
 				sk+=1
 				mas = types.InlineKeyboardMarkup(row_width=2)
