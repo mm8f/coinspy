@@ -59,17 +59,40 @@ def masg(call):
 		cp=0
 		sk=0
 		file='done.txt'
-		for Whisper in open(file,'r').read().splitlines():
-			id=str(Whisper.split('\n')[0])
-			link = requests.get(f'https://cin.oussamavip.repl.co/?oid={id}&submit=submit').text
-			if 'coins":"' in link:
-				link1 = link.split('{"coins":"')[1]
-				coin = link1.split('"')[0]
+		for Mohammed in open(file,'r').read().splitlines():
+			id=str(Mohammed.split('\n')[0])
+			url = "https://script-new-instaup.termux-fil.repl.co/?id={}".format(id)
+			headers = {
+       "Host": "script-new-instaup.termux-fil.repl.co",
+       "Connection": "keep-alive",
+       "Cache-Control": "max-age=0",
+       "sec-ch-ua": 'Not;A Brand";v="99", "Google Chrome";v="97", "Chromium";v="97"',
+       "sec-ch-ua-mobile": "?1",
+       "sec-ch-ua-platform": "Android",
+       "X-Chrome-offline": "persist=0 reason=reload",
+       "Upgrade-Insecure-Requests": "1",
+       "User-Agent": str(generate_user_agent()),
+       "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9",
+       "Sec-Fetch-Site": "none",
+       "Sec-Fetch-Mode": "navigate",
+       "Sec-Fetch-User": "?1",
+       "Sec-Fetch-Dest": "document",
+       "Accept-Encoding": "gzip",
+       "Accept-Language": "ar-EG,ar;q=0.9,en-US;q=0.8,en;q=0.7"}
+			response = requests.get(url,headers=headers)
+			#----> printed (response.text)
+			if ('{"coins":null}}')in str(response.text):
+			cp+=1
+			elif ('coins') in str(response.text)and not ('{"coins":null}}')in str(response.text):
+				coins = str(response.json()['return']['coins'])
+				coins = int(coins)
+				orders = (coins/4)
+				orders = str(orders)
+				ordere = orders.split('.')[0]
 				ok+=1
 				sk+=1
-				bot.send_message(call.message.chat.id,f"‹ ✅ {id} Coins ==> {coin} =====> • @t_4gi")
+				bot.send_message(call.message.chat.id,f"‹ ✅ {id} Coins ==> {coins} =====> • @t_4gi")
 			else:
-				cp+=1
 				sk+=1
 				mas = types.InlineKeyboardMarkup(row_width=2)
 				A = types.InlineKeyboardButton(f'GOOD : {ok}',callback_data="1x")
