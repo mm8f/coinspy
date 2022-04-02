@@ -78,17 +78,17 @@ def masg(call):
 					bot.send_message(call.message.chat.id,f"‹ ✅ {id} Coins ==> {coin} =====> • @t_4gi")
 				elif ('instaup.developers@gmail.com') in response:
 					IP='instaup.developers@gmail.com'
-			else:
-				sk+=1
-				mas = types.InlineKeyboardMarkup(row_width=2)
-				A = types.InlineKeyboardButton(f'GOOD : {ok}',callback_data="1x")
-				E = types.InlineKeyboardButton(f'EROR : {cp}', callback_data="1x")
-				B = types.InlineKeyboardButton(f'{id}', callback_data="1x")
-				R = types.InlineKeyboardButton(f'{sk}', callback_data="1x")
-				K = types.InlineKeyboardButton(f'IP IS BLOCKER{IP}', callback_data="1x")
-				M = types.InlineKeyboardButton('المطور', url='https://t.me/t_4gi')
-				mas.add(A,E,B,R,K,M)
-				bot.edit_message_text(chat_id=call.message.chat.id,message_id=call.message.message_id,text="جاري الفحص النقاط ",reply_markup=mas)
+				else:
+					sk+=1
+					mas = types.InlineKeyboardMarkup(row_width=2)
+					A = types.InlineKeyboardButton(f'GOOD : {ok}',callback_data="1x")
+					E = types.InlineKeyboardButton(f'EROR : {cp}', callback_data="1x")
+					B = types.InlineKeyboardButton(f'{id}', callback_data="1x")
+					R = types.InlineKeyboardButton(f'{sk}', callback_data="1x")
+					K = types.InlineKeyboardButton(f'IP IS BLOCKER{IP}', callback_data="1x")
+					M = types.InlineKeyboardButton('المطور', url='https://t.me/t_4gi')
+					mas.add(A,E,B,R,K,M)
+					bot.edit_message_text(chat_id=call.message.chat.id,message_id=call.message.message_id,text="جاري الفحص النقاط ",reply_markup=mas)
 				
 			
 		
